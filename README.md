@@ -1,10 +1,10 @@
 <div align="center">
 
-# 📚 EduStocks
+# EduStocks
 
-### *Learn Stock Trading Through Interactive Practice*
+### Learn Stock Trading Through Interactive Practice
 
-An educational platform that makes learning stock trading fun and engaging with dummy currency, real-time market data, interactive lessons, and AI-powered guidance.
+An educational platform for learning stock trading with virtual currency, real-time market data, structured lessons, and AI-powered guidance.
 
 [![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk)](https://openjdk.java.net/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-brightgreen?logo=spring)](https://spring.io/projects/spring-boot)
@@ -16,19 +16,19 @@ An educational platform that makes learning stock trading fun and engaging with 
 [![codecov](https://codecov.io/gh/Amogh9929/EduStocks/branch/main/graph/badge.svg)](https://codecov.io/gh/Amogh9929/EduStocks)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://www.docker.com/)
 
-[Features](#-key-features) • [Architecture](#-architecture) • [Demo](#-demo) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Contributing](#-contributing)
+[Features](#key-features) • [Architecture](#architecture) • [Demo](#demo) • [Quick Start](#quick-start) • [Documentation](#documentation) • [Contributing](#contributing)
 
 </div>
 
 ---
 
-## 🌟 Overview
+## Overview
 
 An interactive stock trading learning platform for students with dummy currency, real-time market data, levels, lessons, and an AI trainer guide. Learn stock trading through hands-on practice and personalized AI guidance without any financial risk.
 
 > **Engineering Highlights**: Full-stack application demonstrating modern software engineering practices including layered architecture, comprehensive testing (80%+ coverage), CI/CD pipelines, Docker containerization, and production-ready deployment configurations.
 
-## 🎯 Why EduStocks?
+## Why EduStocks?
 
 - **Risk-Free Learning**: Practice with $10,000 virtual currency
 - **Real Market Data**: Learn with actual stock prices and market movements
@@ -37,7 +37,7 @@ An interactive stock trading learning platform for students with dummy currency,
 - **Gamified Experience**: Level up as you learn and trade
 - **Hands-On Practice**: Learn by doing, not just reading
 
-## 💻 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **Framework**: React 18.2 with TypeScript
@@ -66,22 +66,22 @@ An interactive stock trading learning platform for students with dummy currency,
 - **Package Management**: npm (Frontend), Maven (Backend)
 - **Development**: Hot reload with React Scripts & Spring DevTools
 
-## ✨ Key Features
+## Key Features
 
-### 🔐 **Authentication & Security**
+### Authentication & Security
 - Secure Firebase Authentication (Email/Password)
 - JWT token-based API authentication
 - Protected routes and API endpoints
 - User profile management
 
-### 💰 **Practice Trading**
+### Practice Trading
 - Start with $10,000 virtual currency
 - Real-time stock market data integration
 - Buy and sell stocks with actual market prices
 - Live portfolio tracking with P/L calculation
 - Transaction history
 
-### 📚 **Interactive Learning**
+### Interactive Learning
 - **Three Difficulty Levels**: Beginner, Intermediate, Advanced
 - Step-by-step lessons with clear explanations
 - Interactive quizzes after each lesson
@@ -93,28 +93,28 @@ An interactive stock trading learning platform for students with dummy currency,
   - Investment strategies
   - Portfolio diversification
 
-### 🤖 **AI Trainer**
+### AI Trainer
 - Ask questions about stocks and trading concepts
 - Get personalized, level-appropriate explanations
 - Practice questions with instant feedback
 - Context-aware responses based on your progress
 - Chess.com-style interactive learning experience
 
-### 📊 **Progress & Gamification**
+### Progress & Gamification
 - Experience Points (XP) system
 - Level progression (1-100)
 - Rank system: Novice → Beginner → Intermediate → Advanced → Expert → Master
 - Achievement tracking
 - Performance analytics
 
-### 📈 **Real-Time Stock Data**
+### Real-Time Stock Data
 - Live stock quotes
 - Historical price charts
 - Company information
 - Search functionality
 - Popular stocks directory
 
-## 🏗️ Architecture
+## Architecture
 
 EduStocks follows a modern three-tier architecture with clear separation of concerns:
 
@@ -131,9 +131,9 @@ Frontend (React/TypeScript) → Backend (Spring Boot/Java) → Database (Firebas
 - **Stateless API**: RESTful design with JWT authentication
 - **Docker Containerization**: Production-ready deployment
 
-📖 **[Full Architecture Documentation](./ARCHITECTURE.md)**
+**[Full Architecture Documentation](./ARCHITECTURE.md)**
 
-## 📸 Demo
+## Demo
 
 ### Dashboard
 ![Dashboard Overview](https://via.placeholder.com/800x450/2563eb/ffffff?text=Dashboard+-+Portfolio+Overview+%26+Performance+Metrics)
@@ -153,7 +153,7 @@ Frontend (React/TypeScript) → Backend (Spring Boot/Java) → Database (Firebas
 
 > **Note**: Screenshots show mockups. Live deployment coming soon!
 
-## 🚀 Quick Start
+## Quick Start
 
 Get EduStocks running locally in just a few minutes:
 
@@ -177,7 +177,7 @@ Then open [http://localhost:3000](http://localhost:3000) to see the app!
 
 > **Note**: You'll need to configure Firebase and API keys. See [detailed setup instructions](#-setup-instructions) below.
 
-### 🐳 Quick Start with Docker
+### Quick Start with Docker
 
 ```bash
 # Clone and configure
@@ -194,9 +194,9 @@ docker-compose up -d
 docker-compose logs -f
 ```
 
-Access at [http://localhost](http://localhost) 🎉
+Access at [http://localhost](http://localhost)
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 
@@ -387,7 +387,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for detailed iteration history:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 <details>
 <summary>Click to expand full project structure</summary>
@@ -472,45 +472,45 @@ stock-learning-app/
 
 </details>
 
-## 🎨 Design & Branding
+## Design & Branding
 
 - **App Name**: EduStocks
 - **Color Scheme**: Professional Blue (#2563eb) and Green (#16a34a) gradient
 - **Theme**: Modern, clean, educational interface
 - **Layout**: Responsive design with Tailwind CSS
 
-## 💡 Key Features
+## Core Features
 
-### 1. **Authentication & User Management**
+### 1. Authentication & User Management
 - Firebase Authentication (Email/Password)
 - User profile management
 - Secure token-based API authentication
 
-### 2. **Stock Trading Practice**
+### 2. Stock Trading Practice
 - Real-time stock market data (Yahoo Finance API)
 - Dummy currency system ($10,000 starting balance)
 - Buy/Sell stocks with real market prices
 - Portfolio tracking and profit/loss calculation
 
-### 3. **Interactive Lessons**
+### 3. Interactive Lessons
 - Three levels: Beginner, Intermediate, Advanced
 - Step-by-step lessons with explanations
 - Quiz questions after each lesson
 - Progress tracking
 
-### 4. **AI Trainer**
+### 4. AI Trainer
 - Ask questions about stocks and trading
 - Get personalized explanations
 - Practice questions with instant feedback
 - Level-appropriate guidance
 
-### 5. **Progress System**
+### 5. Progress System
 - Experience Points (XP) system
 - Level progression
 - Rank system (Novice → Master)
 - Achievement tracking
 
-## 📡 API Endpoints
+## API Endpoints
 
 <details>
 <summary>View all API endpoints</summary>
@@ -557,7 +557,7 @@ stock-learning-app/
 
 </details>
 
-## 🗄️ Database Schema
+## Database Schema
 
 Currently using **Firebase Firestore** with the following collections:
 
@@ -573,7 +573,7 @@ Currently using **Firebase Firestore** with the following collections:
 - **MongoDB** - NoSQL alternative
 - **PostgreSQL** - Traditional SQL database for production
 
-## 🔧 Development
+## Development
 
 ### Running in Development Mode
 
@@ -632,7 +632,7 @@ openai.api.key=your-openai-key
 stock.api.key=your-stock-api-key
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Test Coverage
 
@@ -716,7 +716,7 @@ mvn test jacoco:report
   docker run -p 8080:8080 edustocks-backend
   ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 <details>
 <summary>Common Issues and Solutions</summary>
@@ -844,7 +844,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for detailed iteration history:
 - [ ] Multi-language support
 - [ ] Dark mode theme
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
@@ -870,11 +870,11 @@ We welcome contributions! Here's how you can help:
 - Update documentation as needed
 - Ensure all tests pass before submitting PR
 
-## 👥 Authors
+## Authors
 
 - **Your Name** - *Initial work* - [YourGitHub](https://github.com/yourusername)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Stock data provided by [Yahoo Finance](https://finance.yahoo.com/) and [Alpha Vantage](https://www.alphavantage.co/)
 - AI powered by [OpenAI](https://openai.com/)
@@ -882,7 +882,7 @@ We welcome contributions! Here's how you can help:
 - Icons by [Heroicons](https://heroicons.com/)
 - UI components from [Headless UI](https://headlessui.com/)
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see below for details:
 
@@ -910,7 +910,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## 🎓 Learning Resources
+## Learning Resources
 
 - **Stock Market**: [Investopedia](https://www.investopedia.com/)
 - **React**: [Official Docs](https://react.dev/)
@@ -919,7 +919,7 @@ SOFTWARE.
 - **TypeScript**: [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - **Tailwind CSS**: [Tailwind Docs](https://tailwindcss.com/docs)
 
-## 📧 Contact & Support
+## Contact & Support
 
 - **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/stock-learning-app/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/stock-learning-app/discussions)
@@ -929,13 +929,12 @@ SOFTWARE.
 
 <div align="center">
 
-**⭐ Star this repo if you find it helpful!**
+**Star this repository if you find it helpful**
 
-Made with ❤️ for students learning to invest
+Built for students learning to invest
 
-**Happy Learning & Trading! 📚📈**
-
-[⬆ Back to Top](#-edustocks)
+[Back to Top](#edustocks)
 
 </div>
+
 
