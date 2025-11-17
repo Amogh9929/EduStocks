@@ -45,10 +45,10 @@ $checklist = @(
     "[ ] Login page - Clean UI with no errors",
     "[ ] Signup page - Registration form",
     "[ ] Dashboard - Portfolio with 5-10 stocks",
-    "[ ] Trading page - Search & buy/sell interface",
+    "[ ] Trading page - Search and buy/sell interface",
     "[ ] Buy modal - Active purchase dialog",
     "[ ] Lessons list - All lessons with difficulty",
-    "[ ] Lesson detail - Content & quiz",
+    "[ ] Lesson detail - Content and quiz",
     "[ ] AI Trainer - Chat conversation",
     "[ ] Profile - Stats, XP, level, rank",
     "[ ] Mobile view - Responsive dashboard"
