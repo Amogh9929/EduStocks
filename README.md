@@ -872,7 +872,7 @@ We welcome contributions! Here's how you can help:
 
 ## Authors
 
-- **Your Name** - *Initial work* - [YourGitHub](https://github.com/yourusername)
+- Amogh Agarwal 
 
 ## Acknowledgments
 
@@ -922,8 +922,8 @@ SOFTWARE.
 ## Contact & Support
 
 - **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/stock-learning-app/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/stock-learning-app/discussions)
-- **Email**: your.email@example.com
+- **Discussions**: [GitHub Discussions](https://github.com/Amogh9929/Edustocks/discussions)
+- **Email**: agarwalamogh8@gmail.com
 
 ---
 
