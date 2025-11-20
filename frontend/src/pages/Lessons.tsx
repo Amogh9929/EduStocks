@@ -14,7 +14,7 @@ const Lessons: React.FC = () => {
   useEffect(() => {
     loadLessons();
     loadProgress();
-  }, [selectedLevel]);
+  }, [selectedLevel, loadLessons]);
 
   const loadLessons = async () => {
     try {

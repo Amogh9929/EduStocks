@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { lessonApi } from '../services/api';
-import { Lesson, Question } from '../services/api';
+import { Lesson } from '../services/api';
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
 
@@ -18,7 +18,7 @@ const LessonDetail: React.FC = () => {
 
   useEffect(() => {
     loadLesson();
-  }, [id]);
+  }, [id, loadLesson]);
 
   const loadLesson = async () => {
     if (!id) return;

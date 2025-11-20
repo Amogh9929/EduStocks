@@ -13,7 +13,6 @@ const AITrainer: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [queryLoading, setQueryLoading] = useState(false);
   const [level, setLevel] = useState<'beginner' | 'intermediate' | 'advanced'>('beginner');
-  const [progress, setProgress] = useState<UserProgress | null>(null);
 
   React.useEffect(() => {
     loadProgress();
@@ -22,7 +21,6 @@ const AITrainer: React.FC = () => {
   const loadProgress = async () => {
     try {
       const data = await progressApi.getProgress();
-      setProgress(data);
       if (data) {
         setLevel(data.level);
       }
@@ -59,7 +57,7 @@ const AITrainer: React.FC = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${await (window as any).firebase?.auth()?.currentUser?.getIdToken()}`,
+          Authorization: `Bearer ${(window as { firebase?: { auth?: () => { currentUser?: { getIdToken: () => Promise<string> } } } } }).firebase?.auth()?.currentUser?.getIdToken()}`,
         },
         body: JSON.stringify({ query: userQuery, level }),
       });
@@ -113,7 +111,7 @@ const AITrainer: React.FC = () => {
             {['beginner', 'intermediate', 'advanced'].map((lvl) => (
               <button
                 key={lvl}
-                onClick={() => setLevel(lvl as any)}
+                onClick={() => setLevel(lvl as 'beginner' | 'intermediate' | 'advanced')}
                 className={`px-4 py-2 rounded-lg font-medium capitalize ${
                   level === lvl
                     ? 'bg-gradient-to-r from-primary-600 to-success-600 text-white'

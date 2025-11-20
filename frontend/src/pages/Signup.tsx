@@ -29,8 +29,9 @@ const Signup: React.FC = () => {
       await signup(email, password);
       toast.success('Account created successfully!');
       navigate('/');
-    } catch (error: any) {
-      toast.error(error.message || 'Failed to create account');
+    } catch (error: unknown) {
+      const err = error as { message?: string };
+      toast.error(err.message || 'Failed to create account');
     } finally {
       setLoading(false);
     }

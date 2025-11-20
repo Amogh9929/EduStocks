@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { stockApi, portfolioApi } from '../services/api';
 import { Stock, Portfolio } from '../services/api';
-import { ArrowTrendingUpIcon, ArrowTrendingDownIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline';
+import { ArrowTrendingUpIcon, ArrowTrendingDownIcon } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
 
 const Trading: React.FC = () => {
@@ -18,7 +18,7 @@ const Trading: React.FC = () => {
     // Refresh data every 30 seconds for real-time updates
     const interval = setInterval(loadData, 30000);
     return () => clearInterval(interval);
-  }, []);
+  }, [loadData]);
 
   const loadData = async () => {
     try {
@@ -55,8 +55,9 @@ const Trading: React.FC = () => {
       }
       setQuantity('');
       loadData();
-    } catch (error: any) {
-      toast.error(error.response?.data?.message || 'Trade failed');
+    } catch (error: unknown) {
+      const err = error as { response?: { data?: { message?: string } } };
+      toast.error(err.response?.data?.message || 'Trade failed');
     }
   };
 
