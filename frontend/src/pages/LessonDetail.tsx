@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { lessonApi } from '../services/api';
 import { Lesson } from '../services/api';
@@ -16,11 +16,7 @@ const LessonDetail: React.FC = () => {
   const [completed, setCompleted] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    loadLesson();
-  }, [id, loadLesson]);
-
-  const loadLesson = async () => {
+  const loadLesson = useCallback(async () => {
     if (!id) return;
     try {
       setLoading(true);
@@ -32,7 +28,11 @@ const LessonDetail: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id, navigate]);
+
+  useEffect(() => {
+    loadLesson();
+  }, [id, loadLesson]);
 
   const handleAnswerSelect = (answerIndex: number) => {
     if (showExplanation) return;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { lessonApi, progressApi } from '../services/api';
 import { Lesson, UserProgress } from '../services/api';
@@ -11,12 +11,7 @@ const Lessons: React.FC = () => {
   const [selectedLevel, setSelectedLevel] = useState<'beginner' | 'intermediate' | 'advanced'>('beginner');
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    loadLessons();
-    loadProgress();
-  }, [selectedLevel, loadLessons]);
-
-  const loadLessons = async () => {
+  const loadLessons = useCallback(async () => {
     try {
       setLoading(true);
       const data = await lessonApi.getLessons(selectedLevel);
@@ -26,7 +21,7 @@ const Lessons: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedLevel]);
 
   const loadProgress = async () => {
     try {
@@ -36,6 +31,11 @@ const Lessons: React.FC = () => {
       // Progress might not exist for new users
     }
   };
+
+  useEffect(() => {
+    loadLessons();
+    loadProgress();
+  }, [selectedLevel, loadLessons]);
 
   const isLessonCompleted = (lessonId: string) => {
     return progress?.completedLessons.includes(lessonId) || false;

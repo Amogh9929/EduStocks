@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { aiTrainerApi, progressApi } from '../services/api';
-import { AITrainerQuestion, UserProgress } from '../services/api';
+import { AITrainerQuestion } from '../services/api';
 import { AcademicCapIcon, LightBulbIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
 
@@ -53,11 +53,13 @@ const AITrainer: React.FC = () => {
     try {
       setQueryLoading(true);
       // This will call the backend AI service
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const token = await (window as any).firebase?.auth()?.currentUser?.getIdToken();
       const response = await fetch(`${process.env.REACT_APP_API_URL}/ai-trainer/query`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${(window as { firebase?: { auth?: () => { currentUser?: { getIdToken: () => Promise<string> } } } } }).firebase?.auth()?.currentUser?.getIdToken()}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ query: userQuery, level }),
       });

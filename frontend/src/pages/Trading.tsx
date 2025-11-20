@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { stockApi, portfolioApi } from '../services/api';
 import { Stock, Portfolio } from '../services/api';
 import { ArrowTrendingUpIcon, ArrowTrendingDownIcon } from '@heroicons/react/24/outline';
@@ -13,14 +13,7 @@ const Trading: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => {
-    loadData();
-    // Refresh data every 30 seconds for real-time updates
-    const interval = setInterval(loadData, 30000);
-    return () => clearInterval(interval);
-  }, [loadData]);
-
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     try {
       const [stocksData, portfolioData] = await Promise.all([
         stockApi.getStocks(),
@@ -37,7 +30,14 @@ const Trading: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedStock]);
+
+  useEffect(() => {
+    loadData();
+    // Refresh data every 30 seconds for real-time updates
+    const interval = setInterval(loadData, 30000);
+    return () => clearInterval(interval);
+  }, [loadData]);
 
   const handleTrade = async () => {
     if (!selectedStock || !quantity || parseInt(quantity) <= 0) {
