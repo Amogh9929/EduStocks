@@ -39,7 +39,6 @@ class PortfolioServiceTest {
     void testGetPortfolio_WhenExists() {
         when(portfolioRepository.findByUserId(testUserId))
             .thenReturn(testPortfolio);
-        when(stockService.getStockBySymbol(any())).thenReturn(null);
 
         Portfolio result = portfolioService.getPortfolio(testUserId);
 
