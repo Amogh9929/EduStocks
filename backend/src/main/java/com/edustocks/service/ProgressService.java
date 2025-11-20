@@ -2,7 +2,6 @@ package com.edustocks.service;
 
 import com.edustocks.model.UserProgress;
 import com.edustocks.repository.UserProgressRepository;
-import com.edustocks.repository.LessonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +10,6 @@ public class ProgressService {
 
     @Autowired
     private UserProgressRepository userProgressRepository;
-
-    @Autowired
-    private LessonRepository lessonRepository;
 
     public UserProgress getUserProgress(String userId) {
         UserProgress progress = userProgressRepository.findByUserId(userId);

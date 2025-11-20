@@ -73,6 +73,7 @@ public class StockService {
             // Use Alpha Vantage GLOBAL_QUOTE endpoint for latest price
             String uri = String.format("%s?function=GLOBAL_QUOTE&symbol=%s&apikey=%s", baseUrl, symbol, apiKey);
 
+            @SuppressWarnings("unchecked")
             Map<String, Object> response = webClient.get()
                     .uri(uri)
                     .retrieve()
@@ -85,6 +86,7 @@ public class StockService {
                 return mock;
             }
 
+            @SuppressWarnings("unchecked")
             Map<String, String> quote = (Map<String, String>) response.get("Global Quote");
 
             String priceStr = quote.getOrDefault("05. price", "0");
