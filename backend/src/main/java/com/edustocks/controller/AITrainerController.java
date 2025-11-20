@@ -40,7 +40,7 @@ public class AITrainerController {
     public ResponseEntity<Map<String, Object>> answerQuery(
             @RequestBody Map<String, String> requestBody,
             HttpServletRequest request) {
-        String userId = (String) request.getAttribute("userId");
+        // String userId = (String) request.getAttribute("userId");
         String query = requestBody.get("query");
         String level = requestBody.get("level");
 
