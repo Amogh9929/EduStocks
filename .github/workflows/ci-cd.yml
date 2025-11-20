@@ -70,8 +70,8 @@ jobs:
       run: mvn test
       env:
         OPENAI_API_KEY: ""
-        GEMINI_API_KEY: ""
-        AI_PROVIDER: "openai"
+        GEMINI_API_KEY: "AIzaSyBrZdotNhkDiwgSfkNEhDXWLMvd-vMSOkA"
+        AI_PROVIDER: "gemini"
     
     # JaCoCo not configured in pom.xml yet
     # - name: Generate coverage report
