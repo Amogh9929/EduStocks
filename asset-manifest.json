@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/EduStocks/static/css/main.e3a95731.css",
+    "main.js": "/EduStocks/static/js/main.41e80d7e.js",
+    "index.html": "/EduStocks/index.html",
+    "main.e3a95731.css.map": "/EduStocks/static/css/main.e3a95731.css.map",
+    "main.41e80d7e.js.map": "/EduStocks/static/js/main.41e80d7e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3a95731.css",
+    "static/js/main.41e80d7e.js"
+  ]
+}
