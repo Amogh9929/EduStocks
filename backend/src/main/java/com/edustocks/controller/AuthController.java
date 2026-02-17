@@ -20,6 +20,13 @@ public class AuthController {
     public ResponseEntity<Map<String, Object>> verifyToken(HttpServletRequest request) {
         String userId = (String) request.getAttribute("userId");
         String userEmail = (String) request.getAttribute("userEmail");
+
+        if (userId == null || userId.isBlank()) {
+            Map<String, Object> error = new HashMap<>();
+            error.put("success", false);
+            error.put("message", "Unauthorized: missing or invalid Firebase token");
+            return ResponseEntity.status(401).body(error);
+        }
         
         // Initialize user if doesn't exist
         userService.initializeUser(userId, userEmail);

@@ -40,7 +40,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const token = await userCredential.user.getIdToken();
 
     // Send token to backend for verification
-    await axios.post(`${process.env.REACT_APP_API_URL}/auth/verify`, { token });
+    await axios.post(
+      `${process.env.REACT_APP_API_URL}/auth/verify`,
+      null,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return userCredential;
   };
 
@@ -50,7 +58,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const token = await userCredential.user.getIdToken();
 
     // Send token to backend for verification
-    await axios.post(`${process.env.REACT_APP_API_URL}/auth/verify`, { token });
+    await axios.post(
+      `${process.env.REACT_APP_API_URL}/auth/verify`,
+      null,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return userCredential;
   };
 
