@@ -2,7 +2,7 @@
   "name": "stock-learning-app-frontend",
   "version": "1.0.0",
   "description": "Stock Learning App Frontend",
-  "homepage": "https://Amogh9929.github.io/EduStocks",
+  "homepage": "https://edustocks.me",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.17",
