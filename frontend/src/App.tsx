@@ -20,8 +20,17 @@ const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800">
+        <div className="text-center animate-fade-in">
+          <div className="relative mb-6">
+            <div className="animate-spin rounded-full h-16 w-16 border-4 border-emerald-200 border-t-emerald-500 mx-auto"></div>
+            <div className="absolute inset-0 rounded-full bg-emerald-500/20 blur-lg animate-pulse"></div>
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-2xl font-bold text-white">EduStocks</h3>
+            <p className="text-emerald-200 font-medium">Preparing your trading experience...</p>
+          </div>
+        </div>
       </div>
     );
   }
