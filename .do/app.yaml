@@ -1,0 +1,31 @@
+name: edustocks-backend
+region: nyc
+services:
+  - name: api
+    dockerfile_path: backend/Dockerfile
+    source_dir: backend
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    routes:
+      - path: /
+    health_check:
+      http_path: /api/auth/health
+      initial_delay_seconds: 60
+      period_seconds: 30
+    envs:
+      - key: PORT
+        value: "8080"
+      - key: FIREBASE_CREDENTIALS_JSON
+        scope: RUN_TIME
+        type: SECRET
+      - key: OPENAI_API_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: GEMINI_API_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: AI_PROVIDER
+        value: "gemini"
+      - key: firebase.project-id
+        value: "edustocks-42945"

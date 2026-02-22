@@ -19,12 +19,8 @@ WORKDIR /app
 # Copy jar from build stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose port
+# Expose port (DigitalOcean sets PORT env var)
 EXPOSE 8080
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=40s \
-  CMD curl -f http://localhost:8080/api/auth/health || exit 1
-
-# Run application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run application with proper memory settings for small instances
+ENTRYPOINT ["java", "-Xmx256m", "-Xms128m", "-jar", "app.jar"]
