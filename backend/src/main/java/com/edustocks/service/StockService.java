@@ -26,7 +26,10 @@ public class StockService {
     // Simple popular list; you can adjust this list as needed
     private final List<String> popularStocks = List.of(
             "AAPL", "MSFT", "GOOGL", "AMZN", "TSLA",
-            "META", "NVDA", "JPM", "V", "JNJ"
+            "META", "NVDA", "JPM", "V", "JNJ",
+            "WMT", "PG", "KO", "MCD", "DIS",
+            "BA", "GE", "F", "GM", "CSCO",
+            "ORCL", "SAP", "IBM", "INTC", "AMD"
     );
 
     // Sample stock data as fallback when API fails or for demo purposes
@@ -60,6 +63,21 @@ public class StockService {
         sampleStocks.put("JPM", new Stock("JPM", "JPMorgan Chase & Co.", 252.18, 1.89, 0.76, 8901234L, "NYSE"));
         sampleStocks.put("V", new Stock("V", "Visa Inc.", 318.45, 2.34, 0.74, 5678901L, "NYSE"));
         sampleStocks.put("JNJ", new Stock("JNJ", "Johnson & Johnson", 158.92, -0.87, -0.54, 6789012L, "NYSE"));
+        sampleStocks.put("WMT", new Stock("WMT", "Walmart Inc.", 92.34, 1.23, 1.35, 7234567L, "NYSE"));
+        sampleStocks.put("PG", new Stock("PG", "Procter & Gamble Co.", 168.47, 0.89, 0.53, 3456789L, "NYSE"));
+        sampleStocks.put("KO", new Stock("KO", "The Coca-Cola Co.", 72.58, -0.45, -0.62, 4567890L, "NYSE"));
+        sampleStocks.put("MCD", new Stock("MCD", "McDonald's Corp.", 298.76, 2.12, 0.72, 2345678L, "NYSE"));
+        sampleStocks.put("DIS", new Stock("DIS", "The Walt Disney Co.", 92.45, 1.87, 2.07, 8765432L, "NYSE"));
+        sampleStocks.put("BA", new Stock("BA", "The Boeing Co.", 198.32, -3.45, -1.71, 5432109L, "NYSE"));
+        sampleStocks.put("GE", new Stock("GE", "General Electric Co.", 104.56, 2.34, 2.29, 6543210L, "NYSE"));
+        sampleStocks.put("F", new Stock("F", "Ford Motor Co.", 12.89, 0.34, 2.71, 123456789L, "NYSE"));
+        sampleStocks.put("GM", new Stock("GM", "General Motors Co.", 45.67, 1.23, 2.77, 98765432L, "NYSE"));
+        sampleStocks.put("CSCO", new Stock("CSCO", "Cisco Systems Inc.", 52.34, -0.67, -1.27, 21098765L, "NASDAQ"));
+        sampleStocks.put("ORCL", new Stock("ORCL", "Oracle Corp.", 189.45, 3.21, 1.72, 9876543L, "NYSE"));
+        sampleStocks.put("SAP", new Stock("SAP", "SAP SE", 198.76, 2.15, 1.09, 4321098L, "NYSE"));
+        sampleStocks.put("IBM", new Stock("IBM", "International Business Machines", 178.23, -1.45, -0.81, 3210987L, "NYSE"));
+        sampleStocks.put("INTC", new Stock("INTC", "Intel Corp.", 32.87, -0.98, -2.90, 54321098L, "NASDAQ"));
+        sampleStocks.put("AMD", new Stock("AMD", "Advanced Micro Devices Inc.", 182.45, 5.67, 3.21, 32109876L, "NASDAQ"));
     }
 
     public List<Stock> getAllStocks() {

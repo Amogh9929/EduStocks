@@ -81,16 +81,16 @@ const LessonDetail: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
       </div>
     );
   }
 
   if (!lesson) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-500">Lesson not found</p>
+      <div className="min-h-screen bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 flex items-center justify-center">
+        <p className="text-emerald-300">Lesson not found</p>
       </div>
     );
   }
@@ -98,24 +98,24 @@ const LessonDetail: React.FC = () => {
   const currentQuestion = lesson.questions[currentQuestionIndex];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Lesson Header */}
         <div className="mb-8">
           <button
             onClick={() => navigate('/lessons')}
-            className="text-primary-600 hover:text-primary-700 mb-4"
+            className="text-emerald-400 hover:text-emerald-300 mb-4 flex items-center"
           >
             ← Back to Lessons
           </button>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">{lesson.title}</h1>
-          <p className="text-gray-600">{lesson.description}</p>
+          <h1 className="text-4xl font-bold text-white mb-2">{lesson.title}</h1>
+          <p className="text-emerald-200">{lesson.description}</p>
         </div>
 
         {/* Lesson Content */}
         {!completed && currentQuestionIndex === 0 && (
-          <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
-            <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: lesson.content }} />
+          <div className="glass-card rounded-xl p-6 mb-6 border border-navy-600">
+            <div className="prose prose-invert max-w-none text-emerald-100" dangerouslySetInnerHTML={{ __html: lesson.content }} />
           </div>
         )}
 

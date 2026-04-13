@@ -59,23 +59,23 @@ const Lessons: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Lessons</h1>
-          <p className="text-gray-600">Master stock trading through interactive lessons</p>
+          <h1 className="text-4xl font-bold text-white mb-2">Lessons</h1>
+          <p className="text-emerald-200">Master stock trading through interactive lessons</p>
         </div>
 
         {/* Level Tabs */}
-        <div className="flex space-x-4 mb-8">
+        <div className="flex space-x-4 mb-8 overflow-x-auto pb-2">
           {levels.map((level) => (
             <button
               key={level.id}
               onClick={() => setSelectedLevel(level.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+              className={`px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap ${
                 selectedLevel === level.id
-                  ? 'bg-gradient-to-r from-primary-600 to-success-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
+                  ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg'
+                  : 'glass-card text-emerald-200 hover:bg-navy-700 border border-navy-600'
               }`}
             >
               {level.name}
@@ -86,7 +86,7 @@ const Lessons: React.FC = () => {
         {/* Lessons Grid */}
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -97,7 +97,7 @@ const Lessons: React.FC = () => {
               return (
                 <div
                   key={lesson.id}
-                  className={`bg-white rounded-xl shadow-lg p-6 transition-transform hover:scale-105 ${
+                  className={`glass-card rounded-xl p-6 transition-all card-hover border border-navy-600 ${
                     locked ? 'opacity-60' : ''
                   }`}
                 >
@@ -140,7 +140,7 @@ const Lessons: React.FC = () => {
 
         {!loading && lessons.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No lessons available for this level yet.</p>
+            <p className="text-emerald-300 text-lg">No lessons available for this level yet.</p>
           </div>
         )}
       </div>

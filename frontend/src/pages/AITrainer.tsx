@@ -85,28 +85,28 @@ const AITrainer: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2 flex items-center">
-            <AcademicCapIcon className="h-10 w-10 mr-3 text-primary-600" />
+          <h1 className="text-4xl font-bold text-white mb-2 flex items-center">
+            <AcademicCapIcon className="h-10 w-10 mr-3 text-emerald-400" />
             AI Trainer
           </h1>
-          <p className="text-gray-600">Get personalized guidance and answers to your stock market questions</p>
+          <p className="text-emerald-200">Get personalized guidance and answers to your stock market questions</p>
         </div>
 
         {/* Level Selection */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Select Level</label>
+          <label className="block text-sm font-medium text-emerald-200 mb-2">Select Level</label>
           <div className="flex space-x-4">
             {['beginner', 'intermediate', 'advanced'].map((lvl) => (
               <button
                 key={lvl}
                 onClick={() => setLevel(lvl as 'beginner' | 'intermediate' | 'advanced')}
-                className={`px-4 py-2 rounded-lg font-medium capitalize ${
+                className={`px-4 py-2 rounded-lg font-medium capitalize transition-all ${
                   level === lvl
-                    ? 'bg-gradient-to-r from-primary-600 to-success-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    ? 'bg-gradient-to-r from-emerald-600 to-emerald-700 text-white shadow-lg'
+                    : 'glass-card text-emerald-200 hover:bg-navy-700 border border-navy-600'
                 }`}
               >
                 {lvl}
