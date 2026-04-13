@@ -117,16 +117,16 @@ const AITrainer: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Practice Questions */}
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="glass-card rounded-xl shadow-lg p-6 border border-navy-600">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center">
-                <LightBulbIcon className="h-6 w-6 mr-2 text-yellow-500" />
+              <h2 className="text-2xl font-bold text-white flex items-center">
+                <LightBulbIcon className="h-6 w-6 mr-2 text-emerald-400" />
                 Practice Questions
               </h2>
               <button
                 onClick={getQuestion}
                 disabled={loading}
-                className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:opacity-50"
+                className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50 transition-colors"
               >
                 {loading ? 'Loading...' : 'New Question'}
               </button>
@@ -135,11 +135,11 @@ const AITrainer: React.FC = () => {
             {question ? (
               <div>
                 <div className="mb-4">
-                  <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                  <span className="text-xs font-medium text-emerald-300 bg-emerald-500/20 px-2 py-1 rounded border border-emerald-500/50">
                     {question.topic}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-4">{question.question}</h3>
+                <h3 className="text-lg font-bold text-white mb-4">{question.question}</h3>
 
                 <div className="space-y-3 mb-6">
                   {question.options.map((option, index) => {
@@ -151,8 +151,8 @@ const AITrainer: React.FC = () => {
                         disabled={showExplanation}
                         className={`w-full text-left p-4 rounded-lg border-2 transition-colors ${
                           isSelected
-                            ? 'bg-primary-50 border-primary-600'
-                            : 'bg-gray-50 border-transparent hover:bg-gray-100'
+                            ? 'bg-emerald-500/20 border-emerald-500 text-white'
+                            : 'bg-navy-800/50 border-navy-600 hover:bg-navy-800 text-emerald-100'
                         } ${showExplanation ? 'cursor-default' : 'cursor-pointer'}`}
                       >
                         {option}
@@ -162,9 +162,9 @@ const AITrainer: React.FC = () => {
                 </div>
 
                 {showExplanation && (
-                  <div className="mb-6 p-4 bg-blue-50 rounded-lg border-l-4 border-primary-600">
-                    <p className="font-medium text-gray-900 mb-2">Explanation:</p>
-                    <p className="text-gray-700">{question.explanation}</p>
+                  <div className="mb-6 p-4 bg-emerald-500/20 rounded-lg border-l-4 border-emerald-500">
+                    <p className="font-medium text-emerald-300 mb-2">Explanation:</p>
+                    <p className="text-emerald-200">{question.explanation}</p>
                   </div>
                 )}
 
@@ -172,7 +172,7 @@ const AITrainer: React.FC = () => {
                   <button
                     onClick={handleSubmitAnswer}
                     disabled={selectedAnswer === null}
-                    className="w-full px-6 py-2 bg-gradient-to-r from-primary-600 to-success-600 text-white rounded-lg hover:shadow-lg disabled:opacity-50"
+                    className="w-full px-6 py-2 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-lg hover:shadow-lg disabled:opacity-50 transition-all"
                   >
                     Submit Answer
                   </button>
@@ -181,7 +181,7 @@ const AITrainer: React.FC = () => {
                 {showExplanation && (
                   <button
                     onClick={getQuestion}
-                    className="w-full px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
+                    className="w-full px-6 py-2 bg-navy-700 text-emerald-200 rounded-lg hover:bg-navy-600 transition-colors"
                   >
                     Next Question
                   </button>
@@ -189,19 +189,19 @@ const AITrainer: React.FC = () => {
               </div>
             ) : (
               <div className="text-center py-12">
-                <p className="text-gray-500 mb-4">Click "New Question" to start practicing</p>
-                <LightBulbIcon className="h-16 w-16 text-gray-300 mx-auto" />
+                <p className="text-emerald-300 mb-4">Click "New Question" to start practicing</p>
+                <LightBulbIcon className="h-16 w-16 text-navy-600 mx-auto" />
               </div>
             )}
           </div>
 
           {/* Ask AI */}
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-              <ChatBubbleLeftRightIcon className="h-6 w-6 mr-2 text-green-500" />
+          <div className="glass-card rounded-xl shadow-lg p-6 border border-navy-600">
+            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
+              <ChatBubbleLeftRightIcon className="h-6 w-6 mr-2 text-emerald-400" />
               Ask AI Trainer
             </h2>
-            <p className="text-gray-600 mb-4">
+            <p className="text-emerald-200 mb-4">
               Ask any question about stocks, trading, or market concepts. Our AI will help you understand!
             </p>
 
@@ -210,7 +210,7 @@ const AITrainer: React.FC = () => {
                 value={userQuery}
                 onChange={(e) => setUserQuery(e.target.value)}
                 placeholder="e.g., What is a stock split? How does dividend work? Explain P/E ratio..."
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                className="w-full px-4 py-3 border border-navy-600 placeholder-navy-400 text-white bg-navy-800/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none smooth-transition"
                 rows={4}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && e.ctrlKey) {
@@ -223,20 +223,20 @@ const AITrainer: React.FC = () => {
             <button
               onClick={handleSubmitQuery}
               disabled={queryLoading || !userQuery.trim()}
-              className="w-full px-6 py-2 bg-gradient-to-r from-success-600 to-success-700 text-white rounded-lg hover:shadow-lg disabled:opacity-50 mb-4"
+              className="w-full px-6 py-2 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-lg hover:shadow-lg disabled:opacity-50 mb-4 transition-all"
             >
               {queryLoading ? 'Thinking...' : 'Ask AI (Ctrl+Enter)'}
             </button>
 
             {aiResponse && (
-              <div className="mt-4 p-4 bg-green-50 rounded-lg border-l-4 border-success-600">
-                <p className="font-medium text-gray-900 mb-2">AI Response:</p>
-                <p className="text-gray-700 whitespace-pre-wrap">{aiResponse}</p>
+              <div className="mt-4 p-4 bg-emerald-500/20 rounded-lg border-l-4 border-emerald-500">
+                <p className="font-medium text-emerald-300 mb-2">AI Response:</p>
+                <p className="text-emerald-200 whitespace-pre-wrap">{aiResponse}</p>
               </div>
             )}
 
-            <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-              <p className="text-sm text-gray-600">
+            <div className="mt-4 p-4 glass-card rounded-lg border border-navy-600">
+              <p className="text-sm text-emerald-300">
                 <strong>Tip:</strong> Ask about stock concepts, trading strategies, market analysis, or get explanations for complex terms.
               </p>
             </div>
